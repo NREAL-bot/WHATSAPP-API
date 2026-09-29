@@ -1,0 +1,11 @@
+services:
+  whatsapp-moderator:
+    build: .
+    container_name: whatsapp-sticker-moderator
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./auth:/app/.wwebjs_auth
+    shm_size: '1gb'
